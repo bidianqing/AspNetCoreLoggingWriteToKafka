@@ -11,8 +11,7 @@ builder.Services.AddControllers()
 builder.Logging.ClearProviders();
 
 var logger = new LoggerConfiguration()
-    //.ReadFrom.Configuration(builder.Configuration)
-    .WriteTo.Kafka()
+    .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 builder.Logging.AddSerilog(logger);
 builder.Logging.AddConsole();
